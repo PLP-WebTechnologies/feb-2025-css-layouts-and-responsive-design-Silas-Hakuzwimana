@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    header {
+      background: #0d6efd;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul li:hover {
+      color: #ffc107;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 1.5rem;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    aside {
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .email:focus {
+      border-color: rgb(0,0,255);
+    }
+
+    article {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    article h2 {
+      margin-bottom: 1rem;
+    }
+
+    article img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    article p {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: #0d6efd;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0b5ed7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0d6efd;
+      color: white;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        text-align: center;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo {
+        margin-bottom: 0.5rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MySite</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <aside>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Homepage</a></li>
+        <li><a href="#about">Who We Are</a></li>
+        <li><a href="#blog">Read Blog</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
+      <br />
+      <h3>Newsletter</h3>
+      <p>Subscribe to our newsletter for updates:</p>
+      <input type="email" class="email" placeholder="Your email" style="width:100%; padding: 0.5rem; margin-bottom: 0.5rem;">
+      <button class="btn" style="width:100%;">Subscribe</button>
+    </aside>
+
+    <div>
+      <article id="home">
+        <h2>Home</h2>
+        <p>
+          Welcome to MySite! We’re excited to have you here. This site is fully responsive and crafted with HTML and CSS only.
+        </p>
+        <a href="#about" class="btn">Learn About Us</a>
+      </article>
+
+      <article id="about">
+        <h2>About</h2>
+        <p>
+          MySite is a simple, modern, and responsive webpage layout. It demonstrates the use of Flexbox, Grid, and media queries to deliver a great user experience on all devices.
+        </p>
+      </article>
+
+      <article id="blog">
+        <h2>Blog</h2>
+        <p>
+          Check out our latest blog posts and updates! We write about tech, tutorials, and practical web design strategies.
+        </p>
+        <a href="#" class="btn">Visit Blog</a>
+      </article>
+
+      <article id="contact">
+        <h2>Contact</h2>
+        <p>
+          Have questions or suggestions? Reach out through our contact form or connect via social media.
+        </p>
+        <a href="mailto:hakuzwisilas@gmail.com" class="btn">Email Us</a>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
+</body>
+</html>
